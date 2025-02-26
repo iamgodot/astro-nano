@@ -8,61 +8,68 @@ import { dateRange } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
 
 const blog = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
+  .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
+  .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
 const allwork = (await getCollection("work"))
-  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
-  .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf(),
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const work = await Promise.all(
   allwork.map(async (item) => {
     const { Content } = await item.render();
     return { ...item, Content };
-  })
+  }),
 );
-
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
+    <h4 class="animate font-semibold text-black dark:text-white">
+      Hi, I'm Godot <span class="text-xl">👋🏻</span>
+    </h4>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <p class="animate">
-            Hi, Godot here, I'm a developer, minimalist and realistic idealist. Why blogging? I like writing and it has become 1 thing that I've been sticking to persistently.
-            In my mind, writings have different purposes in their own ways. Aside from the blog, I also keep a diary in Notion and manage all of my notes with Obsidian. Ultimately, they're just means of recording.
-          </p>
-          <p class="animate">
-            In case you're interested, this site is built with
-            <Link href="https://github.com/markhorn-dev/astro-nano" aria-label="Astro Nano on Github" external>
-              Astro Nano on Github
-            </Link> and delopyed on Cloudflare. The approach allows me to focus on the writing yet is highly customizable as well.
+            I'm a realistic idealist, minimalist and a developer passionate
+            about AI and web applications. I keep my tech blogs and projects on
+            this little site, which is built with
+            <Link
+              href="https://github.com/markhorn-dev/astro-nano"
+              aria-label="Astro Nano on Github"
+              external
+            >
+              Astro Nano
+            </Link> and hosted on Cloudflare. This approach not only allows me to
+            focus on the writing but is also fast and highly customizable.
           </p>
         </article>
       </section>
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h5>
-          <Link href="/blog">
-            See all posts
-          </Link>
+          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
+          <Link href="/blog"> See all posts </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {blog.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
         </ul>
       </section>
 
@@ -71,16 +78,47 @@ const work = await Promise.all(
           <h5 class="font-semibold text-black dark:text-white">
             Recent projects
           </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
+          <Link href="/projects"> See all projects </Link>
         </div>
         <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
+          {
+            projects.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <article>
+          <p>If you want to get in touch, welcome to send me an email.</p>
+        </article>
+        <ul class="flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link
+                  href={SOCIAL.HREF}
+                  external
+                  aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                >
+                  {SOCIAL.NAME}
+                </Link>
+                {"/"}
+              </li>
+            ))
+          }
+          <li class="line-clamp-1">
+            <Link
+              href={`mailto:${SITE.EMAIL}`}
+              aria-label={`Email ${SITE.NAME}`}
+            >
+              {SITE.EMAIL}
+            </Link>
+          </li>
         </ul>
       </section>
     </div>
