@@ -1,12 +1,8 @@
 ---
-title: "Change the Capitalization of a Directory with Git"
-description: "How to manage a capitalized directory with Git"
+title: Capitalization of Git Repos
+description: How to manage a capitalized directory with Git
 date: 2024-05-19T22:51:26-07:00
 draft: false
-categories:
-  - Code
-tags:
-  - git
 ---
 
 Today I ran into a small issue with Git when I was trying to capitalize a directory.

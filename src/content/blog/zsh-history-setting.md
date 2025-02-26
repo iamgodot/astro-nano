@@ -1,10 +1,8 @@
 ---
-title: "History Setting in Zsh"
-description: "History setting in Zsh"
+title: History Setting in Zsh
+description: How to configure command history properly in Zsh
 date: 2024-06-29T22:05:55-07:00
 draft: false
-categories:
-  - Code
 ---
 
 If you're using zsh, you've probably bundled it with oh-my-zsh, which does a lot of zsh configs underneath. In my case, it has worked well for a pretty long time until I switched to starship, yet it took me a while to figure out how to properly set up history in zsh without it.
