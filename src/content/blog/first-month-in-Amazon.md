@@ -1,0 +1,17 @@
+---
+title: First Month in Amazon
+description: My first month working at Amazon as a sfotware engineer
+date: 2025-09-07 11:51
+draft: false
+---
+Right now it's the fourth weekend since I joined Amazon as a software engineer, which means I've officially finished my first month, so I would like to share some of my experiences in this big company.
+
+First of all, let me throw in the context that before Amazon, I've only worked in small companies(or startups, if you like the sound of that), where the colleagues had very strong technical backgrounds and were great to work with, yet they all stuck with the same situation: always short of money and had to juggle between tons of things. I know there're also fancy and rich startups, but in many cases, they're more suitable for experienced workers who have determined minds and are able to build and fix things with ease. 
+
+Compared with that, a tech giant like Amazon is a much better place to learn from the beginning, especially for junior engineers. Competitive pays, insurances and benefits, nice physical working environments, all together they form up a secure shell for me to not worry about my life quality. That being said, many disagreements might come to argue, but I believe my point stands still. In addition to that, there's also a few onboarding weeks to get familiar with technical setup and development process, which seem not that overwhelming to me given the time window to break things down.
+
+Secondly, as you may expect, there're many aspects which are completely different in Amazon than small companies. One example would be the cycle of development process. Softwares are likely having a very complex set of pipelines to go through from the initial building to the final deployment, so you have to be patient and smart enough to prepare everything ahead for better progress. Often times there're dependencies on partner teams, so communications are not something to skip. This makes me miss the old times when I can iterate the codebase and make deployments overnight. Another example is about tech stacks. You have to be able to work with a dealt hand of cards, which could mean ancient technologies and messy business logics in code. Don't think you could just reuse those latest fancy frameworks or tools that boost your productivity. The point is to make things work, on the other hand, this forces you to focus more on the bigger picture, so as not to waste too much time on low-level details of implementation.
+
+Lastly, it's always good to learn from the talents around. I'm lucky to work in a team with great teammates and manager, who have strong technical skills and are very supportive. To better learn from them, I setup an important goal: to understand the reasons behind the work and be able to explain them clearly to outsiders. I guess the motivation originates from my desire to make transition from know all the hows to more whys.
+
+After all it's only one month, so I'm basically just scratching the surface here, and I'll definitely share more once I dive deeper into everything. Guess what I love most about it is this new experience which differs from my previous jobs and helps me build out new mindsets as an eye-opener. There's no best place to work, nor worst, so as long as you're growing as desired, it's the right one for you.
